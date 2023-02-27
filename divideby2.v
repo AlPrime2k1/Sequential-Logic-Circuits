@@ -1,22 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: NIST
+// Engineer: KIRTI KUMAR
 // 
 // Create Date: 12.02.2023 14:40:59
-// Design Name: 
-// Module Name: divideby2
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
+// Design Name: DIVIDE BY 2
+// Module Name: divideby2 
+// Description: This design uses frequency division circuit to divide the clock signal such that different operations can be performed on aternative clock edges.
+//              Expected behaviour is that on every odd posedge, data1 is transferred to output and on every even posedge, data2 is transferred to output.
 // Revision 0.01 - File Created
 // Additional Comments: This circuit is used to give different outputs at alternate active edge of clock.
-// Here on even edges data1 is given to output while on odd edges data2 is given to output.
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -34,10 +27,13 @@ initial begin
  clk_out = 0;
  end
  always @(posedge clk or negedge reset) begin
- if (!reset) begin
- clk_out <= 0;
- end else begin
- clk_out <= ~clk_out;
+ if (!reset) 
+ begin
+  clk_out <= 0;
+ end 
+ else 
+ begin
+  clk_out <= ~clk_out;
  end
  end
  
