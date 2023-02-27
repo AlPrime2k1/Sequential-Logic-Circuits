@@ -7,7 +7,8 @@
 // Design Name: DIVIDE BY 2
 // Module Name: divideby2 
 // Description: This design uses frequency division circuit to divide the clock signal such that different operations can be performed on aternative clock edges.
-//              Expected behaviour is that on every odd posedge, data1 is transferred to output and on every even posedge, data2 is transferred to output.
+//              Clk_out signal has half the frequency of original clk signal and based on it's posedge and negedge, data1 and data2 values are assigned to out.
+//              Expected behaviour is that on every odd posedge, data2 is transferred to output and on every even posedge, data1 is transferred to output.
 // Revision 0.01 - File Created
 // Additional Comments: This circuit is used to give different outputs at alternate active edge of clock.
 //////////////////////////////////////////////////////////////////////////////////
@@ -38,10 +39,10 @@ initial begin
  end
  
  always@(posedge clk_out)
- out<=data1;
+ out<=data2;
  
  always@(negedge clk_out)
- out<=data2;
+ out<=data1;
  
 
 endmodule
