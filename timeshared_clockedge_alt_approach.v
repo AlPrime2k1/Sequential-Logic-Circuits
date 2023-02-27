@@ -1,15 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: NIST
+// Engineer: KIRTI KUMAR
 // 
 // Create Date: 25.02.2023 14:39:52
-// Design Name: 
+// Design Name: TIMESHARED_CLOCK
 // Module Name: timeshared_clockedge_alt_approach
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Description: This design uses continuosly incremented count variable to divide the clock posedge into odd and even such that different operations can be performed on aternative clock edges.
+//              Expected behaviour is that on every odd posedge, data1 is transferred to output and on every even posedge, data2 is transferred to output.
 // 
 // Dependencies: 
 // 
@@ -17,6 +15,18 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // 
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+// Company: NIST
+// Engineer: KIRTI KUMAR
+// 
+// Create Date: 12.02.2023 14:40:59
+// Design Name: DIVIDE BY 2
+// Module Name: divideby2 
+// Description: This design uses frequency division circuit to divide the clock signal such that different operations can be performed on aternative clock edges.
+//              Expected behaviour is that on every odd posedge, data2 is transferred to output and on every even posedge, data1 is transferred to output.
+// Revision 0.01 - File Created
+// Additional Comments: This circuit is used to give different outputs at alternate active edge of clock.
 //////////////////////////////////////////////////////////////////////////////////
 
 
